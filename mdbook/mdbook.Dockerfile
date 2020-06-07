@@ -16,4 +16,4 @@ RUN mkdir downloads \
     && cd .. \
     && rm -rf downloads
 
-RUN echo "$(mdbook --version)"
+CMD ["mdbook", "--version"]
