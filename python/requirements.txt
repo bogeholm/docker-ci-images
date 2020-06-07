@@ -1,0 +1,9 @@
+jupyter
+jupyter_client
+matplotlib
+nbconvert
+numpy
+pandas
+scikit-learn
+tensorflow
+torch
