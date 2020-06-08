@@ -1,5 +1,6 @@
 # Docker CI images
 [![Travis build](https://travis-ci.com/bogeholm/docker-ci-images.svg?branch=master)](https://travis-ci.com/github/bogeholm/docker-ci-images)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 A couple of prebuilt Docker images I use for continuous integration pipelines.
 
