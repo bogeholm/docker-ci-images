@@ -6,7 +6,7 @@ before_script:
 script:
   - ls
   - cd mdbook
-  - build-push-mdbook.sh
+  - bash build-push-mdbook.sh
 
 #jobs:
 #  include:
