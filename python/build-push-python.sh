@@ -1,6 +1,10 @@
 #! /bin/bash
 set -ex
 
-docker build --tag bogeholm/python-datascience:latest --file python.Dockerfile .
-docker run --rm bogeholm/python-datascience:latest
-docker push bogeholm/python-datascience:latest 
+DOCKERID=${DOCKERID:-bogeholm}
+IMAGENAME=${IMAGENAME:-python-datascience}
+IMAGETAG=${IMAGETAG:-latest}
+
+docker build --tag "${DOCKERID}/${IMAGENAME}:${IMAGETAG}" --file python.Dockerfile .
+docker run --rm "${DOCKERID}/${IMAGENAME}:${IMAGETAG}"
+docker push "${DOCKERID}/${IMAGENAME}:${IMAGETAG}"

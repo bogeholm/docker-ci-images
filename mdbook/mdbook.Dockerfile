@@ -7,7 +7,8 @@ RUN apt-get update \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-ENV MDBOOK_VERSION=0.3.7
+ARG MDBOOK_VERSION_ARG=0.3.7
+ENV MDBOOK_VERSION=${MDBOOK_VERSION_ARG}
 
 RUN mkdir downloads \
     && cd downloads \
