@@ -5,13 +5,8 @@ script:
   - # Build mdbook
   - pushd mdbook
   - bash build-push-mdbook.sh
-
-#jobs:
-#  include:
-#    if: branch = master
-#    - stage: build docker images
-#      before_script:
-#      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-#      script:
-#      - cd mdbook
-#      - build-push-mdbook.sh
+  - popd
+  - # Build python
+  - pushd python
+  - bash build-push-python.sh
+  - popd
