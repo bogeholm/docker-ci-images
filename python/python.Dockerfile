@@ -5,9 +5,12 @@ WORKDIR /usr/src/build
 # Matplotlib uses LaTeX to render text
 # https://stackoverflow.com/questions/58121461/runtimeerror-failed-to-process-string-with-tex-because-latex-could-not-be-found
 # https://stackoverflow.com/questions/11354149/python-unable-to-render-tex-in-matplotlib
+
+# https://github.com/phusion/baseimage-docker/issues/319#issuecomment-272568689
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update \
     && apt-get install --no-install-recommends --yes \
-    apt-utils \
     texlive \
     ghostscript \
     dvipng \
@@ -16,6 +19,9 @@ RUN apt-get update \
     texlive-fonts-recommended \
     cm-super \
     && rm -rf /var/lib/apt/lists/*
+
+# https://github.com/phusion/baseimage-docker/issues/319#issuecomment-272568689
+ENV DEBIAN_FRONTEND=teletype
 
 COPY requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt

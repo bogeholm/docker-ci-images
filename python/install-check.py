@@ -1,6 +1,6 @@
 import numpy
 import pandas
-#import pygraphviz
+#import pydot
 import sklearn
 import torch
 import warnings
@@ -12,14 +12,12 @@ with warnings.catch_warnings():
 GREEN="\033[1;32m"
 NOFORMAT="\033[0m"
 
-def printer(key, val):
-    """ Print '$key version: $val', $val is printed in GREEN
+def print_name_version(module):
+    """ Print name and version of module
     """
-    print(key + " version: " + GREEN + val + NOFORMAT)
+    name = getattr(module, "__name__")
+    version = getattr(module, "__version__")
+    print(name + " version: " + GREEN + version + NOFORMAT)
 
-printer("NumPy", numpy.__version__)
-printer("Pandas", pandas.__version__)
-printer("scikit-learn", sklearn.__version__)
-printer("Tensorflow", tensorflow.__version__)
-#printer("PyGraphviz", pygraphviz.__version__)
-printer("PyTorch", torch.__version__)
+for mod in [numpy, pandas, sklearn, tensorflow, torch]:
+    print_name_version(mod)
