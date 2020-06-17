@@ -16,8 +16,8 @@ RUN apt-get update \
     dvipng \
     texlive-latex-base \
     texlive-latex-recommended \
+    texlive-latex-extra \
     texlive-fonts-recommended \
-    texlive-fonts-extra \
     cm-super \
     && rm -rf /var/lib/apt/lists/*
 
