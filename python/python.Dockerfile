@@ -17,6 +17,7 @@ RUN apt-get update \
     texlive-latex-base \
     texlive-latex-recommended \
     texlive-fonts-recommended \
+    texlive-fonts-extra \
     cm-super \
     && rm -rf /var/lib/apt/lists/*
 
