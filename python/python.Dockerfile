@@ -27,6 +27,10 @@ ENV DEBIAN_FRONTEND=teletype
 COPY requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+# Script to check if we can format text in Matplotlib using LaTeX.
+# This can be tricky due to the various LaTeX dependencies required.
+COPY matplotlib-latex-test.py ./
+
 # Default entrypoint prints versions of some installed packages and exits
 COPY install-check.py ./
 # versions.sh calls install-check.py
