@@ -4,7 +4,7 @@ set -ex
 DOCKERID=${DOCKERID:-bogeholm}
 IMAGENAME=${IMAGENAME:-mdbook}
 IMAGETAG=${IMAGETAG:-latest}
-MDBOOK_VERSION=${MDBOOK_VERSION:-0.3.7}
+MDBOOK_VERSION=${MDBOOK_VERSION:-0.4.6}
 
 docker build --build-arg MDBOOK_VERSION_ARG=${MDBOOK_VERSION} --tag "${DOCKERID}/${IMAGENAME}:${IMAGETAG}" --file mdbook.Dockerfile .
 docker run --rm "${DOCKERID}/${IMAGENAME}:${IMAGETAG}"
