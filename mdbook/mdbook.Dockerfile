@@ -12,7 +12,7 @@ RUN apt-get update \
 # https://github.com/phusion/baseimage-docker/issues/319#issuecomment-272568689
 ENV DEBIAN_FRONTEND=teletype
 
-ARG MDBOOK_VERSION_ARG=0.3.7
+ARG MDBOOK_VERSION_ARG=0.4.6
 ENV MDBOOK_VERSION=${MDBOOK_VERSION_ARG}
 
 RUN mkdir downloads \
